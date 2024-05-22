@@ -72,6 +72,48 @@ const caixa2ChamaProximo = () =>{
         }
     }
 }
+const caixa3ChamaProximo = () =>{
+    let cliente = f1.desenfileirar();
+    let tempo = 200;
+    if(cliente){
+        document.getElementById("C3").innerHTML = 
+        "["+cliente.id + "("+cliente.itens+")]";
+        tempo = cliente.itens * 1000;
+        setTimeout(function(){
+            caixa3ChamaProximo();
+        },tempo);
+    }else{
+        if(clienteParaAtender > 0){
+            document.getElementById("C3").innerHTML = "Aguardando!"
+            setTimeout(function(){
+                caixa3ChamaProximo();
+            },gerarItens()*50);
+        }else{
+            document.getElementById("C3").innerHTML = "Fechado!"
+        }
+    }
+}
+const caixa4ChamaProximo = () =>{
+    let cliente = f1.desenfileirar();
+    let tempo = 200;
+    if(cliente){
+        document.getElementById("C4").innerHTML = 
+        "["+cliente.id + "("+cliente.itens+")]";
+        tempo = cliente.itens * 1000;
+        setTimeout(function(){
+            caixa4ChamaProximo();
+        },tempo);
+    }else{
+        if(clienteParaAtender > 0){
+            document.getElementById("C4").innerHTML = "Aguardando!"
+            setTimeout(function(){
+                caixa4ChamaProximo();
+            },gerarItens()*50);
+        }else{
+            document.getElementById("C4").innerHTML = "Fechado!"
+        }
+    }
+}
 const maxClientes = 50;
 const filaInicial = 10;
 let clienteParaAtender = maxClientes - filaInicial;
@@ -92,6 +134,8 @@ const entrarNaFila = () => {
     }
     caixa1ChamaProximo();
     caixa2ChamaProximo();
+    caixa3ChamaProximo();
+    caixa4ChamaProximo();
     entrarNaFila();
 })();
 
