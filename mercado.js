@@ -85,6 +85,7 @@ const entrarNaFila = () => {
     }
 }
 
+
 (function(){
     for(let i=1; i <= filaInicial; i++){
         f1.enfileirar(Cliente("C"+i,gerarItens()));
@@ -93,3 +94,6 @@ const entrarNaFila = () => {
     caixa2ChamaProximo();
     entrarNaFila();
 })();
+
+
+
