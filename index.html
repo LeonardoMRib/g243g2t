@@ -13,6 +13,7 @@
     <header class="barra">
         <div class="barra_conteudo">
             <div class="barra_info">
+                
                 <h1>Cápsula do Tempo - 3G</h1>
             </div>
             <div class="barra_cadastro">
@@ -23,12 +24,18 @@
             <div class="barra_login">
                 <div class="form_base">
                     <form class="login">
-                        <input type="text" id="usuario" name="usuario" class="login_usuario"> 
+                    <div class="campoInput">
+
+                        <input type="text" id="usuario" name="usuario" class="login_usuario" required> 
                         <label for="usuario">Usuário</label>
-                        <input type="password" id="senha" name="senha" class="login_usuario">
+                    </div>
+                    <div class="campoInput">
+                        <input type="password" id="senha" name="senha" class="login_usuario" required>
                         <label for="senha">Senha</label>
-                        <button class="btn" type="submit">Logar</button>
-                        
+                    </div>
+                    <div class="campoInput">
+                        <button type="submit">Logar</button>
+                    </div>
 
 
                     </form>
